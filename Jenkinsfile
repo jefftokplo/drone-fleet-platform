@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    DOCKER_IMAGE = 'jefftokplo/drone-api'
+    DOCKER_IMAGE = 'dockerjefftkp/drone-api'
   }
   stages {
     stage('Checkout') {
