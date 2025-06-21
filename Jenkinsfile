@@ -2,6 +2,7 @@ pipeline {
   agent any
   environment {
     DOCKER_IMAGE = 'dockerjefftkp/drone-api'
+    KUBECONFIG = '/var/lib/jenkins/.kube/config'
   }
   stages {
     stage('Checkout') {
