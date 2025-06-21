@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git 'https://github.com/YOUR_USERNAME/drone-fleet-platform.git'
+        git branch: 'main', url: 'https://github.com/jefftokplo/drone-fleet-platform.git'
       }
     }
     stage('Build Image') {
