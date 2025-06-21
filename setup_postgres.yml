@@ -1,0 +1,17 @@
+- hosts: postgres_server
+  become: true
+  tasks:
+    - name: Install PostgreSQL
+      apt:
+        name: postgresql
+        state: present
+
+    - name: Ensure DB and user exist
+      become_user: postgres
+      postgresql_db:
+        name: dronefleet
+      postgresql_user:
+        name: droneuser
+        password: dronepass
+        priv: "ALL"
+
