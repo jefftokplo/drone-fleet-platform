@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: droneuser
+      POSTGRES_PASSWORD: dronepass
+      POSTGRES_DB: dronefleet
+    ports:
+      - "5432:5432"
+
+  api:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=__init__.py
+    command: flask run --host=0.0.0.0 --port=5000
+version: '3.8'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: droneuser
+      POSTGRES_PASSWORD: dronepass
+      POSTGRES_DB: dronefleet
+    ports:
+      - "5432:5432"
+
